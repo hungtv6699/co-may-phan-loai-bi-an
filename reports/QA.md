@@ -13,3 +13,11 @@ Bảng tương tác vật lý chưa được kiểm thử. Đồ họa dùng SVG
 ## Tái lập và lưu giữ
 
 Chạy `node tools/qa.cjs` để kiểm tra offline và xuất ảnh PNG vào outputs; thêm URL Pages để kiểm tra online. Chạy `powershell -ExecutionPolicy Bypass -File tools/package.ps1` để xuất ZIP. Ảnh là bằng chứng kiểm thử của game này, tạo ngày 12/11/2026; ngày rà soát lưu giữ 26/11/2026. File WAV trung gian của công cụ dựng giọng nằm ở tmp/voice, do tools/render-voice.py tạo, được xóa theo từng câu sau khi mã hóa MP3 thành công. Ngày rà soát tệp tạm 19/11/2026; không tự động xóa theo ngày.
+
+## Kiểm tra âm thanh và triển khai
+
+- Tám tệp MP3 của preset Ngọc Linh, dựng bằng mô hình VieNeu v3 Turbo của Onter Voice Lab trên máy. ffprobe đọc được thời lượng từ 1,84 đến 5,52 giây.
+- Kịch bản kiểm tra tám tệp tải được metadata, lời hướng dẫn và gợi ý có phát, câu cũ dừng khi mở gợi ý, và nút âm thanh tạm dừng rồi khôi phục Web Audio. Chế độ toàn màn hình được bật và tắt từ màn chào.
+- Commit game đã kiểm thử: [85f91a2](https://github.com/hungtv6699/co-may-phan-loai-bi-an/commit/85f91a2d65e09130391a759dc57511255dde3e7e). Các commit bàn giao sau đó chỉ thêm bằng chứng và tài liệu.
+- Tám WAV trung gian đã xóa sau khi mã hóa MP3. Không có CDN hoặc yêu cầu API giọng đọc trong lúc chơi.
+- [Ảnh màn hình](screenshots/) · [Kết quả online](online.jsonl) · [Kết quả offline](offline.jsonl)
