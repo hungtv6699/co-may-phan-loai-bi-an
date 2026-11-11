@@ -21,3 +21,7 @@ Chạy `node tools/qa.cjs` để kiểm tra offline và xuất ảnh PNG vào ou
 - Commit game đã kiểm thử: [85f91a2](https://github.com/hungtv6699/co-may-phan-loai-bi-an/commit/85f91a2d65e09130391a759dc57511255dde3e7e). Các commit bàn giao sau đó chỉ thêm bằng chứng và tài liệu.
 - Tám WAV trung gian đã xóa sau khi mã hóa MP3. Không có CDN hoặc yêu cầu API giọng đọc trong lúc chơi.
 - [Ảnh màn hình](screenshots/) · [Kết quả online](online.jsonl) · [Kết quả offline](offline.jsonl)
+
+## Bố cục theo màn hình — 12/11/2026
+
+Kiểm thử Chrome ở 9 kích thước từ 320 × 568 đến 1920 × 1080. Điện thoại dọc đặt hai máy dưới khay; điện thoại ngang giữ ba cột và giảm chiều cao. Kịch bản kiểm tra khay đủ 10 đồ vật, các nút nằm trong màn hình, mở gợi ý, chạm chọn sai và kéo vào máy đúng. Xem [ảnh](screenshots/responsive/) và [kết quả](responsive.jsonl). Tái lập bằng node tools/responsive-qa.cjs; đặt SCREENSHOTS=1 để xuất ảnh. Ảnh kiểm thử tạo ngày 12/11/2026, rà soát giữ lại ngày 26/11/2026.

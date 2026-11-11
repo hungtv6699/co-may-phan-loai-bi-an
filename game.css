@@ -1,1 +1,65 @@
 *{box-sizing:border-box} :root{font-family:system-ui,sans-serif;color:#ecf5ff;background:#171735;color-scheme:dark}body{margin:0;min-height:100dvh;display:grid;grid-template-rows:auto 1fr auto}button{font:inherit;font-weight:800;cursor:pointer;color:inherit;border:0;border-radius:16px;padding:12px 20px;min-height:48px;background:#403c76;box-shadow:inset 0 2px #ffffff32,0 4px #0004;touch-action:manipulation}button:hover,button:focus-visible{outline:3px solid #ffe38a;outline-offset:3px}button[hidden]{display:none}header,footer{padding:12px clamp(12px,4vw,65px);display:flex;align-items:center;gap:12px;background:#1d1a3e;z-index:2}header{justify-content:space-between}header strong,header small{display:block}header strong{font-size:clamp(17px,2.5vw,34px)}header small{letter-spacing:.18em;color:#e7aafd;font-weight:800}nav{display:flex;gap:8px}main{position:relative;overflow:hidden;display:grid;align-items:center;min-height:430px;background:radial-gradient(ellipse at 50% 28%,#886bc4,#382d68 66%,#201d45)}.window{position:absolute;inset:6% 29% 28%;border:12px solid #ab81d6;border-radius:46% 46% 25px 25px;background:radial-gradient(ellipse at 38% 22%,#feeac8,#cfb0f8 40%,#7254a6 90%);box-shadow:0 12px 28px #171333,inset 0 0 28px #503a87}.pipes{position:absolute;inset:10% -4% 22%;border:24px solid #68569e;border-top-color:#a083ca;border-radius:75px;box-shadow:0 8px 15px #1c183e,inset 0 5px 12px #1c183e}.belt{position:absolute;bottom:13%;left:-5%;width:110%;height:16%;border-block:12px solid #8177b1;background:repeating-linear-gradient(105deg,#332e56 0 37px,#68658e 39px 44px,#332e56 47px 56px);animation:belt 1.2s linear infinite;box-shadow:0 23px #221f40,0 34px 24px #15132c}.paused .belt{animation-play-state:paused}@keyframes belt{to{background-position:58px 0}}.floor{z-index:1;display:grid;grid-template-columns:minmax(110px,1fr) minmax(135px,1.55fr) minmax(110px,1fr);gap:clamp(4px,2vw,32px);align-items:end;width:min(94%,1350px);margin:auto;padding:26px 0 60px}.machine{position:relative;display:grid;justify-items:center;padding:20px 6px 18px;border:5px solid #ffffff42;border-radius:26% 26% 17% 17%;background:linear-gradient(145deg,#94f9fc,#258acb 43%,#16478f);box-shadow:inset -12px -14px 24px #0c1f785c,0 12px #142653,0 20px 30px #191434;color:white}.machine.odd{border-radius:48% 48% 23% 23%;background:linear-gradient(145deg,#ffb592,#e74b61 45%,#9b2655);box-shadow:inset -12px -14px 24px #63103977,0 12px #57214d,0 20px 30px #191434}.machine strong{font-size:clamp(12px,2.2vw,30px)}.machine small{font-weight:900;font-size:clamp(12px,1.7vw,24px)}.face{margin:14px 0 8px;border-radius:50px;background:#252043;width:76%;height:clamp(42px,7vw,92px);display:flex;align-items:center;justify-content:center;gap:15%;position:relative;box-shadow:inset 0 7px 10px #100d24,0 3px #ffffff40}.face i{width:17%;height:43%;border-radius:50%;background:radial-gradient(circle at 38% 32%,white 0 12%,#342244 16% 41%,#effaff 45%);animation:blink 6s infinite}.face b{position:absolute;bottom:14%;width:15%;height:12%;background:#fe9dbc;border-radius:0 0 30px 30px}.beacon{position:absolute;top:-22px;width:38px;height:24px;border-radius:15px 15px 4px 4px;background:linear-gradient(#fff9af,#ffad42);box-shadow:0 0 22px #ffc75f}.mouth{margin-top:10px;width:72%;height:26px;border-radius:12px;background:#211b3b;box-shadow:inset 0 6px 8px #10091f,0 3px #ffffff55}.gear{position:absolute;right:-8px;top:49%;width:33px;aspect-ratio:1;background:radial-gradient(circle,#423950 22%,#ffe48b 24%,#f29357 75%);clip-path:polygon(39% 0,61% 0,66% 17%,80% 9%,91% 20%,83% 34%,100% 39%,100% 61%,83% 66%,91% 80%,80% 91%,66% 83%,61% 100%,39% 100%,34% 83%,20% 91%,9% 80%,17% 66%,0 61%,0 39%,17% 34%,9% 20%,20% 9%,34% 17%);animation:spin 7s linear infinite}.good{filter:brightness(1.45);outline:5px solid #fff29a}.bad{animation:shake .35s 2}.bad .face b{border-radius:50% 50% 0 0}@keyframes shake{25%{translate:-6px}75%{translate:6px}}@keyframes spin{to{rotate:360deg}}@keyframes blink{94%,98%{scale:1 1}96%{scale:1 .1}}.work{text-align:center;display:grid;justify-items:center;gap:9px}#progress{background:#281f50;border-radius:20px;padding:6px 15px;font-weight:800}#tray,.pairs{width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;justify-items:center;gap:3px;border-radius:21px;padding:10px;background:#252044;border:3px solid #dcb9fb;min-height:90px;box-shadow:inset 0 5px 16px #120d2d,0 6px 0 #583d88}.item{width:min(100%,74px);display:block;aspect-ratio:1;animation:pop .35s both;filter:drop-shadow(0 4px 3px #0006)}@keyframes pop{from{scale:.2;opacity:0}to{scale:1;opacity:1}}#gift{position:relative;background:none;box-shadow:none;width:clamp(70px,11vw,150px);height:clamp(65px,9vw,120px);touch-action:none;padding:0;z-index:5;filter:drop-shadow(0 12px 8px #140e2a88)}.box,.lid{position:absolute;display:block;background:linear-gradient(90deg,#da6ceb 0 40%,#ffdf72 40% 60%,#c658df 60% 80%,#8d38b6 80%);border:2px solid #ffffff50;box-shadow:inset 0 5px 12px #ffe4fc55;border-radius:9px}.box{inset:30% 8% 0}.lid{inset:13% 2% 62%;z-index:1;transition:transform .45s}.lid:before{content:'';position:absolute;left:28%;top:-85%;width:40%;height:85%;border:6px solid #ffda78;border-radius:55% 55% 10% 10%}.open .lid{transform:translate(-26%,-51%) rotate(-20deg)}.arrive{animation:arrive .55s both}@keyframes arrive{from{transform:translateX(-45vw)}}.selected{outline:4px solid #ffe68b;outline-offset:4px}footer{min-height:84px}#message{flex:1;font-weight:750;font-size:clamp(15px,2vw,27px)}#next,.primary{background:#ffd977;color:#32204a}dialog{width:min(92vw,570px);max-height:94dvh;border:2px solid #dfbaf8;border-radius:30px;padding:clamp(15px,3vw,30px);background:linear-gradient(145deg,#43296f,#221b43);color:white;text-align:center;box-shadow:0 20px 80px #100a31aa}dialog::backdrop{background:#1a113865}dialog h1{font-size:clamp(26px,5vw,54px);line-height:1;margin:10px 0 15px;color:#ffe597}dialog p{font-size:clamp(16px,2vw,23px)}dialog button{margin:5px}.guide{display:block;width:85px;margin:auto}.pairs{grid-template-columns:repeat(2,1fr);width:min(220px,85%);margin:auto;gap:4px 10px}.cell{width:100%;display:grid;place-items:center;height:clamp(26px,7vh,58px);border:1px solid #c8acf999;border-radius:8px;background:#ffffff12}.cell:nth-child(4n+1),.cell:nth-child(4n+2){background:#c685ed34}.cell .item{width:auto;height:95%}#confetti{position:absolute;inset:0;pointer-events:none;z-index:3}#confetti i{position:absolute;top:-15px;width:10px;height:19px;animation:fall 2.5s linear infinite}@keyframes fall{to{transform:translateY(85vh) rotate(600deg)}}@media(max-width:580px){header,footer{padding:8px;gap:5px}button{padding:8px}nav button{font-size:12px}main{min-height:340px}.floor{width:98%;grid-template-columns:minmax(82px,1fr) minmax(100px,1.55fr) minmax(82px,1fr)}.machine{border-width:3px}#tray{padding:5px;grid-template-columns:repeat(3,minmax(0,1fr))}}@media(prefers-reduced-motion:reduce){*,*::before{animation-duration:.001ms!important;transition-duration:.001ms!important}}main::before{content:"";position:absolute;inset:0;background:url(assets/factory.svg) center/cover no-repeat;z-index:0;pointer-events:none}.window{opacity:.72}.pipes{opacity:.55}.belt{border-radius:14px;z-index:0}.good .gear{animation-duration:.7s}.good .beacon{background:#fff8ae;box-shadow:0 0 40px 12px #ffe68e}
+/* Keep the tray and both destinations in view at classroom and phone sizes. */
+header>div{min-width:0}
+nav{flex-shrink:0}
+#tray{grid-template-columns:repeat(5,minmax(0,1fr))}
+.machine{min-width:0}
+dialog{overflow:auto;overscroll-behavior:contain}
+footer{padding-bottom:max(12px,env(safe-area-inset-bottom))}
+@media (max-width: 900px) and (orientation: portrait){
+  header{padding:9px 12px;gap:8px}
+  header small{font-size:9px;letter-spacing:.13em}
+  header strong{font-size:clamp(15px,4vw,24px);line-height:1.15}
+  nav{gap:5px}
+  nav button{font-size:11px;padding:5px 8px;min-height:44px;max-width:78px}
+  main{min-height:365px;align-items:stretch}
+  main::before{background-position:center}
+  .window{inset:3% 6% 31%;border-width:7px;border-radius:24px}
+  .pipes{opacity:.3}
+  .belt{bottom:30%;height:11%;border-width:6px;box-shadow:0 9px #221f40,0 13px 16px #15132c}
+  .floor{width:min(94%,520px);margin:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px;padding:13px 0 17px;align-items:stretch}
+  .work{grid-column:1/-1;grid-row:1;gap:5px}
+  #progress{font-size:13px}
+  #tray{min-height:100px;padding:6px;gap:3px;border-radius:15px;grid-template-rows:repeat(2,1fr)}
+  #tray .item{width:min(100%,54px)}
+  #gift{width:76px;height:59px}
+  .machine{grid-row:2;border-width:3px;padding:8px 6px 7px;min-height:108px}
+  .even{grid-column:1}
+  .odd{grid-column:2}
+  .machine strong{font-size:clamp(14px,4vw,21px)}
+  .machine small{font-size:clamp(12px,3.3vw,17px)}
+  .face{height:34px;margin:3px 0 4px}
+  .beacon{width:25px;height:15px;top:-13px}
+  .gear{width:23px;right:-5px}
+  .mouth{height:13px;margin-top:5px}
+  footer{min-height:70px;padding:8px 10px max(8px,env(safe-area-inset-bottom));gap:7px}
+  #message{font-size:clamp(13px,3.6vw,18px);line-height:1.25}
+  footer button{font-size:13px;white-space:nowrap;padding-inline:9px}
+  dialog button{font-size:14px}
+}
+@media (orientation: landscape) and (max-height: 520px){
+  header,footer{padding:5px 12px}
+  header small{font-size:9px}
+  header strong{font-size:18px}
+  nav button,footer button{min-height:44px;padding:5px 10px;font-size:13px}
+  main{min-height:218px}
+  .floor{padding:12px 0 20px;gap:12px}
+  .work{gap:4px}
+  #progress{font-size:12px;padding:3px 10px}
+  #tray{min-height:68px;padding:4px;grid-template-rows:repeat(2,minmax(0,1fr))}
+  #tray .item{width:min(100%,36px)}
+  #gift{width:69px;height:55px}
+  .machine{padding:6px 4px 8px}
+  .face{height:38px;margin:6px 0 4px}
+  .machine strong,.machine small{font-size:clamp(12px,2.2vw,17px)}
+  .mouth{height:14px;margin-top:4px}
+  .beacon{width:25px;height:15px;top:-12px}
+  footer{min-height:54px}
+  #message{font-size:clamp(13px,2vw,18px)}
+  dialog{padding:10px 16px;max-height:95dvh}
+  dialog h1{font-size:clamp(26px,5vw,40px)}
+  dialog p{font-size:15px;margin:7px 0}
+  .guide{width:45px}
+  .cell{height:clamp(20px,7vh,36px)}
+  dialog button{padding:7px 12px;min-height:44px}
+}

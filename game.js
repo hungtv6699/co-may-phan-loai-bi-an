@@ -37,7 +37,7 @@ function closeHint(){panel.close();document.body.classList.remove('paused');stop
 $('hint').onclick=()=>{if(state!=='ready')return;document.body.classList.add('paused');dialog('<h2>Ghép từng đôi</h2><p>'+voiceLines.hint+'</p>'+pairs()+'<button id="back" class="primary">Quay lại trò chơi</button>');speak('hint');$('back').onclick=closeHint};
 panel.addEventListener('cancel',e=>{e.preventDefault();if(document.body.classList.contains('paused'))closeHint()});
 $('next').onclick=next;$('skip').onclick=()=>{gift._flight?.cancel();start()};machines.forEach((m,k)=>m.onclick=()=>choose(k,m));
-function fullscreen(){(document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()).catch(()=>msg('Trình duyệt không cho phép bật toàn màn hình.'))}
+function fullscreen(){if(!document.fullscreenEnabled){msg('Trình duyệt này chưa hỗ trợ toàn màn hình.');return}(document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()).catch(()=>msg('Trình duyệt không cho phép bật toàn màn hình.'))}
 function toggleSound(){muted=!muted;$('sound').textContent='Âm thanh: '+(muted?'tắt':'bật');$('sound').setAttribute('aria-pressed',String(!muted));if(muted){stopVoice();ctx?.suspend()}else audio()}
 $('sound').onclick=toggleSound;$('full').onclick=fullscreen;
 gift.addEventListener('click',e=>{if(e.detail===0&&state==='ready')pick(!selected)});
