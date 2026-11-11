@@ -1,0 +1,1 @@
+window.RECORDED_VOICE=["hello", "four", "five", "ask", "hint", "retry", "praise", "finish"];

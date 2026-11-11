@@ -16,3 +16,5 @@ Giải nén toàn bộ ZIP vào cùng một thư mục. Mở `index.html` bằng
 ## Bảo trì
 
 `index.html` là giao diện, `game.css` chứa bố cục và chuyển động, `game.js` chứa luật chơi, đồ họa SVG cho các món đồ và âm thanh tổng hợp bằng Web Audio. Cảnh nhà máy được vẽ bằng SVG và CSS có đổ bóng tạo chiều sâu. Kiểm thử bằng `node tools/qa.cjs`; đặt `PLAYWRIGHT_PATH` tới thư mục Playwright đã cài hoặc cài Playwright ngoài gói offline. Thêm URL Pages làm tham số để chạy kiểm thử online.
+
+audio/ chứa 8 câu thoại Ngọc Linh dựng từ preset Onter Voice Lab (VieNeu v3 Turbo). Game phát MP3 tại chỗ; nhạc và hiệu ứng được tạo tại chỗ. Nút âm thanh tắt cả ba.
