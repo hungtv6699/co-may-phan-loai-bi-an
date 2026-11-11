@@ -1,0 +1,9 @@
+const {spawn}=require('node:child_process'),fs=require('node:fs'),readline=require('node:readline');
+const root='E:/Onter VN/ONTER-VOICE-LAB/';
+const p=spawn(root+'public_service/.venv/Scripts/python.exe',['-X','utf8',root+'desktop_bridge/mcp_server.py'],{stdio:['pipe','pipe','inherit']});
+let id=0;const pending=new Map();
+p.on('error',e=>{console.error(e);process.exit(1)});
+readline.createInterface({input:p.stdout}).on('line',line=>{try{let m=JSON.parse(line);pending.get(m.id)?.(m.result||m.error)}catch{}});
+const call=(method,params)=>new Promise(resolve=>{pending.set(++id,resolve);p.stdin.write(JSON.stringify({jsonrpc:'2.0',id,method,params})+'\n')});
+const tool=async(name,args)=>{const r=await call('tools/call',{name,arguments:args});const s=r.content?.[0]?.text;try{return JSON.parse(s)}catch{return s||r}};
+(async()=>{await call('initialize',{protocolVersion:'2024-11-05',capabilities:{},clientInfo:{name:'gift-factory',version:'1'}});const voices=await tool('list_voices',{engine:'vieneu'});if(!process.argv[2]){console.log(JSON.stringify(voices));return}const voice_id=process.argv[2];const lines=JSON.parse(fs.readFileSync('tools/lines.json','utf8'));fs.mkdirSync('audio',{recursive:true});for(const [key,text] of Object.entries(lines)){const r=await tool('create_voice',{text,voice_id,output_name:'gift-factory-'+key});const path=r.path||r.output_path||r.audio_path;if(!path){console.log(r);throw Error(key)}fs.copyFileSync(path,'audio/'+key+'.mp3');console.log(key)}fs.writeFileSync('audio/manifest.js','window.RECORDED_VOICE='+JSON.stringify(Object.keys(lines))+';')})().catch(e=>{console.error(e);process.exitCode=1}).finally(()=>p.kill());
